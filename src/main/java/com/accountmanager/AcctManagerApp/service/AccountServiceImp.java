@@ -5,6 +5,8 @@ import com.accountmanager.AcctManagerApp.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AccountServiceImp implements AccountService{
 
@@ -18,7 +20,9 @@ public class AccountServiceImp implements AccountService{
         account.setType(type);
         account.setAmount(amount);
         accountRepository.save(account);
-
+    }
+    public Optional<Account> findByName(String name) {
+        return accountRepository.findByName(name);
     }
 
 

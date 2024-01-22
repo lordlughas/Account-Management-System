@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.validation.Validator;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @Validated
@@ -47,12 +48,19 @@ public class AccountController {
         ModelAndView createdAccountView = new ModelAndView();
         createdAccountView.setViewName("account/create");
         try{
-            accountService.createAccount(name, type, amount);
-            createdAccountView.addObject("message", "Account Created Successfully!");
-            return createdAccountView;
+            Optional<Account> accountOptional = accountService.findByName(name);
+
+            if (accountOptional.isPresent()) {
+                createdAccountView.addObject("message", "Account Name " +name +" Already Exist: Not Created");
+                return createdAccountView;
+            } else {
+                accountService.createAccount(name, type, amount);
+                createdAccountView.addObject("message", "Account Created Successfully!");
+                return createdAccountView;
+            }
+
         }
         catch(Exception e){
-            accountService.createAccount(name, type, amount);
             createdAccountView.addObject("message", "Error in Creating Account. Please try again!");
             return createdAccountView;
         }
