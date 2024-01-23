@@ -14,5 +14,7 @@ public interface AccountService  {
 
     Optional<Account> findByName(String name);
 
-    List<Account> getAllStaff();
+    List<Account> getAllAccount();
+
+    Account getAccount(long id);
 }

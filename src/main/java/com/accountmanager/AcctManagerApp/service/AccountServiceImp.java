@@ -27,10 +27,18 @@ public class AccountServiceImp implements AccountService{
     }
 
     @Override
-    public List<Account> getAllStaff() {
+    public List<Account> getAllAccount() {
         List<Account> accountList = accountRepository.findAll();
         return accountList;
     }
 
-
+    @Override
+    public Account getAccount(long id){
+        Optional<Account> optionalAccount= accountRepository.findById(id);
+        if (optionalAccount.isPresent()){
+            Account account = optionalAccount.get();
+            return account;
+        }
+        return null;
+    }
 }

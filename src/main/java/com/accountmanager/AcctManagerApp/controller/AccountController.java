@@ -63,10 +63,20 @@ public class AccountController {
     public ModelAndView dashboard()
     {
         ModelAndView dashboardView = new ModelAndView();
-        List<Account> accountList = accountService.getAllStaff();
+        List<Account> accountList = accountService.getAllAccount();
         dashboardView.addObject("accounts", accountList);
         dashboardView.setViewName("account/dashboard");
         return dashboardView;
+    }
+
+    @RequestMapping(value = "/view", method = RequestMethod.GET)
+    public ModelAndView view(@RequestParam(value = "id") long id)
+    {
+        ModelAndView viewModelAndView = new ModelAndView();
+        viewModelAndView.setViewName("account/view");
+        Account selectedAccount = accountService.getAccount(id);
+        viewModelAndView.addObject("account", selectedAccount);
+        return viewModelAndView;
     }
 
 }
