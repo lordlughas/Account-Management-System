@@ -41,4 +41,9 @@ public class AccountServiceImp implements AccountService{
         }
         return null;
     }
+    @Override
+    public void updateAccount(Account account) {
+        accountRepository.save(account);
+    }
+
 }
