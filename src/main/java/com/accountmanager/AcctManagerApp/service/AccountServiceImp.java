@@ -5,6 +5,7 @@ import com.accountmanager.AcctManagerApp.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,6 +24,12 @@ public class AccountServiceImp implements AccountService{
     }
     public Optional<Account> findByName(String name) {
         return accountRepository.findByName(name);
+    }
+
+    @Override
+    public List<Account> getAllStaff() {
+        List<Account> accountList = accountRepository.findAll();
+        return accountList;
     }
 
 

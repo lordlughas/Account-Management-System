@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -62,6 +63,8 @@ public class AccountController {
     public ModelAndView dashboard()
     {
         ModelAndView dashboardView = new ModelAndView();
+        List<Account> accountList = accountService.getAllStaff();
+        dashboardView.addObject("accounts", accountList);
         dashboardView.setViewName("account/dashboard");
         return dashboardView;
     }
