@@ -41,16 +41,14 @@ public class AccountServiceImp implements AccountService{
         }
         return null;
     }
-<<<<<<< HEAD
 
 
     @Override
     public void deleteAccount(Long id) { accountRepository.deleteById(id);}
-=======
+
     @Override
     public void updateAccount(Account account) {
         accountRepository.save(account);
     }
->>>>>>> main
 
 }
