@@ -18,5 +18,9 @@ public interface AccountService  {
 
     Account getAccount(long id);
 
+<<<<<<< HEAD
      void deleteAccount(Long id);
+=======
+    void updateAccount(Account account);
+>>>>>>> main
 }

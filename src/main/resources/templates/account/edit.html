@@ -9,15 +9,15 @@
 <body>
 <a th:href="@{/Account/dashboard}">Go to Dashboard</a>
 <h1 class="text-align-center">Create Account Page</h1>
-<form th:action="@{/Account/regaccount}" method="POST">
+<form th:action="@{/Account/update/{id}(id = ${account.id})}" method="POST">
     <label>Name</label>
-    <input type="text" name="name" id="name" value="">
+    <input type="text" name="name" id="name" th:value="${account.name}" value="">
     <span id="nameError" style="color: red;"></span>
     <br><br>
 
     <label>Account Type</label>
     <select name="type" id="type">
-        <option value="" selected disabled>Select Type</option>
+        <option value="" th:value="${account.type}" th:text="${account.type}" selected disabled>Select Type</option>
         <option value="Savings">Savings</option>
         <option value="Current">Current</option>
         <option value="Domiciliary">Domiciliary</option>
@@ -27,7 +27,7 @@
     <br><br>
 
     <label>Amount:</label>
-    <input type="number" name="amount" id="amount" value="" min="1500">
+    <input type="number" name="amount" id="amount" value="" th:value="${account.amount}" min="1500">
     <span id="amountError" style="color: red;"></span>
     <br><br>
 

@@ -4,7 +4,10 @@ import com.accountmanager.AcctManagerApp.entity.Account;
 import com.accountmanager.AcctManagerApp.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+<<<<<<< HEAD
 import org.springframework.ui.Model;
+=======
+>>>>>>> main
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -80,6 +83,7 @@ public class AccountController {
         viewModelAndView.addObject("account", selectedAccount);
         return viewModelAndView;
     }
+<<<<<<< HEAD
     
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable(value = "id") Long id){
@@ -91,5 +95,23 @@ public class AccountController {
         accountModelAndView.addObject("accounts", accountList);
         return accountModelAndView;
     };
+=======
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public ModelAndView edit(@PathVariable(value = "id") long id)
+    {
+        ModelAndView viewModelAndView = new ModelAndView();
+        viewModelAndView.setViewName("account/edit");
+        Account selectedAccount = accountService.getAccount(id);
+        viewModelAndView.addObject("account", selectedAccount);
+        return viewModelAndView;
+    }
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public ModelAndView update(Account account, @PathVariable(value="id") long id )
+    {
+        account.setId(id);
+        accountService.updateAccount(account);
+        return dashboard();
+    }
+>>>>>>> main
 
 }
