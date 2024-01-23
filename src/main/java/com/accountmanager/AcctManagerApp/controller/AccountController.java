@@ -4,6 +4,8 @@ import com.accountmanager.AcctManagerApp.entity.Account;
 import com.accountmanager.AcctManagerApp.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -78,5 +80,16 @@ public class AccountController {
         viewModelAndView.addObject("account", selectedAccount);
         return viewModelAndView;
     }
+    
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable(value = "id") Long id){
+        ModelAndView accountModelAndView = new ModelAndView();
+        accountService.deleteAccount(id);
+
+        List<Account> accountList = accountService.getAllAccount();
+        accountModelAndView.setViewName("account/dashboard");
+        accountModelAndView.addObject("accounts", accountList);
+        return accountModelAndView;
+    };
 
 }

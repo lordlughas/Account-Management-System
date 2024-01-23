@@ -17,4 +17,6 @@ public interface AccountService  {
     List<Account> getAllAccount();
 
     Account getAccount(long id);
+
+     void deleteAccount(Long id);
 }
