@@ -1,0 +1,5 @@
+body{
+    	background-image: linear-gradient(#E1E1F7 1.5px, transparent 1.5px), linear-gradient(to right, #E1E1F7 1.5px, transparent 1.5px);
+    	background-size: 12px 12px;
+    	background-color: #FFFFFF;
+}

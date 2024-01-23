@@ -4,6 +4,7 @@ import com.accountmanager.AcctManagerApp.entity.Account;
 import com.accountmanager.AcctManagerApp.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -77,6 +78,22 @@ public class AccountController {
         Account selectedAccount = accountService.getAccount(id);
         viewModelAndView.addObject("account", selectedAccount);
         return viewModelAndView;
+    }
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public ModelAndView edit(@PathVariable(value = "id") long id)
+    {
+        ModelAndView viewModelAndView = new ModelAndView();
+        viewModelAndView.setViewName("account/edit");
+        Account selectedAccount = accountService.getAccount(id);
+        viewModelAndView.addObject("account", selectedAccount);
+        return viewModelAndView;
+    }
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public ModelAndView update(Account account, @PathVariable(value="id") long id )
+    {
+        account.setId(id);
+        accountService.updateAccount(account);
+        return dashboard();
     }
 
 }
