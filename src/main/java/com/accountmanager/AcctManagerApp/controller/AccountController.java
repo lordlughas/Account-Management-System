@@ -4,28 +4,20 @@ import com.accountmanager.AcctManagerApp.entity.Account;
 import com.accountmanager.AcctManagerApp.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.validation.Validator;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@Validated
 @RequestMapping(value= "/Account")
 public class AccountController {
 
     @Autowired
     private AccountService accountService;
 
-    @Autowired
-    private Validator validator;
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ModelAndView home()
     {
@@ -64,6 +56,14 @@ public class AccountController {
             createdAccountView.addObject("message", "Error in Creating Account. Please try again!");
             return createdAccountView;
         }
+    }
+
+    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    public ModelAndView dashboard()
+    {
+        ModelAndView dashboardView = new ModelAndView();
+        dashboardView.setViewName("account/dashboard");
+        return dashboardView;
     }
 
 }
