@@ -1,0 +1,264 @@
+table:hover {
+    background-color: red;
+
+}
+
+/*Welcome starts here*/
+body{
+    /*font-family: 'Arial', sans-serif;*/
+
+}
+
+.div-nav {
+}
+
+.nav-link{
+    color: rgba(105, 0, 199, 1);
+    font-family: "Lato", sans-serif;
+    font-weight: bolder;
+}
+
+.nav-link:hover{
+    color: white;
+    background-color: rgba(105, 0, 199, 1) ;
+}
+
+
+.nav-item {
+
+}
+
+
+ul {margin: 0;
+    padding: 0;
+    border-top: 2px solid #808080;
+
+
+}
+
+.navbarlink a {
+    display: block;
+    PADDING: 1em;
+    border-bottom:1px solid #808080;
+    color: black;
+
+}
+
+.navbar {
+    height: 10%;
+    background-color: whitesmoke;
+}
+.home{
+    font-family: "Sofia", sans-serif;
+    background-image: url('../images/homepage.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.maintext {
+    font-family: "Sofia", sans-serif;
+    /*transition: all 320ms ease-in-out;*/
+    /*width: 100%;*/
+}
+
+
+.main__text {
+    box-sizing: border-box;
+    color: whitesmoke;
+    font-size: 2.3em;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 8px #212121;
+    padding: 0 0.500rem;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100%;
+    font-family: "Oswald", sans-serif;
+}
+
+.btn{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-family: "Kosugi Maru", sans-serif;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8); /* Simplified background */
+    color: rgba(105, 0, 199, 1); /* Color matching the gradient */
+    border: 2px solid rgba(105, 0, 199, 1); /* Border color matching the text */
+    padding: 0.75rem 0;
+    margin-top: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+
+
+}
+
+.btn:hover {
+    background: rgba(105, 0, 199, 1); /* Gradient color on hover */
+    color: white; /* White text on hover */
+    border-color: transparent; /* Border disappears on hover */
+}
+@media screen and (max-width: 768px) {
+
+}
+
+/*Welcome ends here*/
+
+
+/*Create page begins here */
+
+.login-form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.7s ease;
+    margin: auto;
+    margin-top: 5vw;
+}
+
+.login-form:hover {
+    transform: scale(1.05);
+}
+
+/* Input and Button Styling */
+.form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    font-family: "Kosugi Maru", sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(105, 0, 199, 0.5);
+}
+
+.login-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Simplified background */
+    color: rgba(105, 0, 199, 1); /* Color matching the gradient */
+    border: 2px solid rgba(105, 0, 199, 1); /* Border color matching the text */
+    padding: 0.75rem 0;
+    margin-top: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Kosugi Maru", sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.login-btn:hover {
+    background: rgba(105, 0, 199, 1); /* Gradient color on hover */
+    color: white; /* White text on hover */
+    border-color: transparent; /* Border disappears on hover */
+}
+
+/* Checkbox and Title Styling */
+.checkbox-label {
+    user-select: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkbox-label input {
+    margin-right: 0.5rem;
+}
+
+.login-title {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+/*Create ends here */
+
+/*View Begins here */
+.view-form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 50vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.7s ease;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.login-form:hover {
+    transform: scale(1.05);
+}
+
+
+.view-item{
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    font-family: "Kosugi Maru", sans-serif;
+    font-size:1.3em;
+}
+
+.view-item:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(105, 0, 199, 0.5);
+}
+
+.view-btn {
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8); /* Simplified background */
+    color: rgba(105, 0, 199, 1); /* Color matching the gradient */
+    border: 2px solid rgba(105, 0, 199, 1); /* Border color matching the text */
+    padding: 0.75rem 0;
+    margin-top: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Kosugi Maru", sans-serif;
+}
+
+.view-btn:hover {
+    background: rgba(105, 0, 199, 1); /* Gradient color on hover */
+    color: white; /* White text on hover */
+    border-color: transparent; /* Border disappears on hover */
+}
+
+.two-button {
+    margin: auto;
+    width: 100%;
+
+}
+
+
+
+/*View ends here */

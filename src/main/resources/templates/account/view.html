@@ -2,25 +2,75 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>View All</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
 <body>
-    <h1>List of All Accounts</h1>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th><th>NAME</th><th>TYPE</th><TH>AMOUNT</TH>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td th:text="${account.id}"></td>
-                <td th:text="${account.name}"></td>
-                <td th:text="${account.type}"></td>
-                <td th:text="${account.amount}"></td>
-            </tr>
-        </tbody>
-    </table>
+<!--<div class="home">-->
+<!--    <div class="login-form shadow-lg">-->
+<!--        <div class="login-title text-2xl mb-2">Create Account</div>-->
+<!--        <input type="text" placeholder="Name" class="form-control" />-->
+<!--        <input type="text" placeholder="Id" class="form-control" />-->
+<!--        <input type="text" placeholder="Type" class="form-control" />-->
+<!--        <input type="text" placeholder="Amount" class="form-control" />-->
+<!--        <button class="login-btn">Create Account</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="home">
+
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center text-center">
+
+        <div class="div-nav">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a  th:href="@{/Staff/View}" class="nav-link" > View</a>
+                </li>
+                <li class="nav-item">
+                    <a  th:href="@{/Staff/Dashboard}" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a  th:href="@{/Staff/Edit}" class="nav-link">Update</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <div class="view-form shadow-lg">
+        <div class="login-title text-2xl mb-2">
+            <h1> <span th:text="${staff.name}"></span> User Account Info</h1>
+        </div>
+        <div  class="view-item">
+            <p> Name: <span  th:text="${staff.name}"></span></p>
+            <p> Type: <span  th:text="${staff.type}"></span></p>
+            <p> ID: <span  th:text="${staff.id}"></span></p>
+            <p> Amount: <span  th:text="${staff.amount}"></span></p>
+        </div>
+        <div class="two-button">
+            <button class="view-btn"><a th:href="@{/Staff/List}">Back</a> </button>
+
+            <button class="view-btn"><a th:href="@{/Staff/Delete}">Delete Account</a> </button>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>
