@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value= "/Account")
@@ -65,6 +67,25 @@ public class AccountController {
     {
         ModelAndView dashboardView = new ModelAndView();
         List<Account> accountList = accountService.getAllAccount();
+        double totalAmount = 0.0;
+        for (Account account : accountList) {
+            totalAmount += account.getAmount();
+        }
+
+        long countedSavings = accountList.stream().filter(account -> "Savings".equalsIgnoreCase(account.getType())).count();
+        long countedDomi = accountList.stream().filter(account -> "Domiciliary".equalsIgnoreCase(account.getType())).count();
+        long countedSalary = accountList.stream().filter(account -> "Salary".equalsIgnoreCase(account.getType())).count();
+        long countedCurrent = accountList.stream().filter(account -> "Current".equalsIgnoreCase(account.getType())).count();
+        dashboardView.addObject("totalAmount", totalAmount);
+        dashboardView.addObject("countedSavings", countedSavings);
+        dashboardView.addObject("countedDomi",countedDomi);
+        dashboardView.addObject("countedSalary",countedSalary);
+        dashboardView.addObject("countedCurrent",countedCurrent);
+        dashboardView.addObject("totalSavings",accountList.stream().filter(account -> "Savings".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("totalDomis",accountList.stream().filter(account -> "Domiciliary".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("totalSalary",accountList.stream().filter(account -> "Salary".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("totalCurrent",accountList.stream().filter(account -> "Current".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("topAccounts",accountList.stream().sorted(Comparator.comparingDouble(Account::getAmount).reversed()).limit(3).collect(Collectors.toList()));
         dashboardView.addObject("accounts", accountList);
         dashboardView.setViewName("account/dashboard");
         return dashboardView;
@@ -106,6 +127,18 @@ public class AccountController {
         account.setId(id);
         accountService.updateAccount(account);
         return dashboard();
+    }
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView delete(Account account, @PathVariable(value="id") long id )
+    {
+        account.setId(id);
+        accountService.deleteAccount(account);
+        ModelAndView dashboardView = new ModelAndView();
+        List<Account> accountList = accountService.getAllAccount();
+        dashboardView.addObject("accounts", accountList);
+        dashboardView.addObject("message", "Successfully Deleted!!!");
+        dashboardView.setViewName("account/dashboard");
+        return dashboardView;
     }
 
 }
