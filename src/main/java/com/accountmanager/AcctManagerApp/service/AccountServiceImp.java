@@ -43,7 +43,13 @@ public class AccountServiceImp implements AccountService{
     }
     @Override
     public void updateAccount(Account account) {
+
         accountRepository.save(account);
+    }
+
+    @Override
+    public void deleteAccount(Account account) {
+        accountRepository.delete(account);
     }
 
 }
