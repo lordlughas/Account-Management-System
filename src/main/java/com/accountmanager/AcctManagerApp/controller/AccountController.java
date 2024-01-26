@@ -97,6 +97,7 @@ public class AccountController {
         ModelAndView viewModelAndView = new ModelAndView();
         viewModelAndView.setViewName("account/view");
         Account selectedAccount = accountService.getAccount(id);
+        viewModelAndView.addObject("accountPic", "https://robohash.org/"+ selectedAccount.getName());
         viewModelAndView.addObject("account", selectedAccount);
         return viewModelAndView;
     }
