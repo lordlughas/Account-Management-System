@@ -103,14 +103,15 @@ public class AccountController {
     }
     
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable(value = "id") Long id){
-        ModelAndView accountModelAndView = new ModelAndView();
-        accountService.deleteAccount(id);
-
+    public ModelAndView delete(Account account, @PathVariable(value = "id") Long id){
+        account.setId(id);
+        accountService.deleteAccount(account);
+        ModelAndView dashboardView = new ModelAndView();
         List<Account> accountList = accountService.getAllAccount();
-        accountModelAndView.setViewName("account/dashboard");
-        accountModelAndView.addObject("accounts", accountList);
-        return accountModelAndView;
+        dashboardView.addObject("accounts", accountList);
+        dashboardView.addObject("message", "Successfully Deleted!!!");
+        dashboardView.setViewName("account/dashboard");
+        return dashboardView;
     };
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
@@ -128,18 +129,6 @@ public class AccountController {
         account.setId(id);
         accountService.updateAccount(account);
         return dashboard();
-    }
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView delete(Account account, @PathVariable(value="id") long id )
-    {
-        account.setId(id);
-        accountService.deleteAccount(account);
-        ModelAndView dashboardView = new ModelAndView();
-        List<Account> accountList = accountService.getAllAccount();
-        dashboardView.addObject("accounts", accountList);
-        dashboardView.addObject("message", "Successfully Deleted!!!");
-        dashboardView.setViewName("account/dashboard");
-        return dashboardView;
     }
 
 }
