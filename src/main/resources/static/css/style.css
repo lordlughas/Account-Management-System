@@ -1,5 +1,17 @@
 body{
-    	background-image: linear-gradient(#E1E1F7 1.5px, transparent 1.5px), linear-gradient(to right, #E1E1F7 1.5px, transparent 1.5px);
-    	background-size: 12px 12px;
-    	background-color: #FFFFFF;
+    background-color: #f9f9f9;
+}
+main{
+    width:100vw;
+}
+.blob{
+top:0;
+right:0;
+}
+.curve{
+    position:fixed;
+    margin:0;
+    bottom:-5%;
+    width:100%;
+    background:transparent;
 }
