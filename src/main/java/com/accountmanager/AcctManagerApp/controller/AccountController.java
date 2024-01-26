@@ -101,6 +101,18 @@ public class AccountController {
         viewModelAndView.addObject("account", selectedAccount);
         return viewModelAndView;
     }
+    
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable(value = "id") Long id){
+        ModelAndView accountModelAndView = new ModelAndView();
+        accountService.deleteAccount(id);
+
+        List<Account> accountList = accountService.getAllAccount();
+        accountModelAndView.setViewName("account/dashboard");
+        accountModelAndView.addObject("accounts", accountList);
+        return accountModelAndView;
+    };
+
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public ModelAndView edit(@PathVariable(value = "id") long id)
     {

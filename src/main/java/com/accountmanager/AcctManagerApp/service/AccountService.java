@@ -18,6 +18,8 @@ public interface AccountService  {
 
     Account getAccount(long id);
 
+     void deleteAccount(Long id);
+
     void updateAccount(Account account);
 
     void deleteAccount(Account account);
