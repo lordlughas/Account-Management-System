@@ -43,7 +43,7 @@ Follow these steps to set up and run the Account Management System:
 #### 1. Clone the Repository
 Clone the repository to your local machine using the following command:
 ```
-git clone https://github.com/your-username/account-management-system.git
+git clone https://github.com/lordlughas/account-management-system.git
 ```
 #### 2. Configure MySQL Database
 Create a MySQL database and update the application.properties file with your database configuration. Open the src/main/resources/application.properties file and modify the following properties:
