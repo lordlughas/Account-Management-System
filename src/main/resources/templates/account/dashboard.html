@@ -28,7 +28,7 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo"><img src="/assets/img/firstBanklogo-no-bg.png" alt="" class="img-fluid"></a>
+        <a th:href="@{/Account}" class="logo"><img src="/assets/img/firstBanklogo-no-bg.png" alt="" class="img-fluid"></a>
 
         <nav id="navbar" class="navbar">
             <ul>
@@ -188,7 +188,7 @@
                                 <td th:text="${topaccount.name}">Martins</td>
                                 <td th:text="${topaccount.type}">Savings</td>
                                 <td>  &#8358;<span  th:text="${topaccount.amount}"></span></td>
-                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${topaccount.id})}" >View</a> </td>
+                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${topaccount.id})}" >View </a> </td>
                             </tr>
                             </tbody>
                         </table>
