@@ -82,6 +82,7 @@
                          <div class="col-3 mb-0 bg-opacity-3 rounded-5 color-elephant-yellow text-elephant-purple align-middle">
                              <h1  class="mb-0 fs-1 p-3 text-center text-align-middle">D</h1>
                          </div>
+                         </div>
 
                          <div class="col-8 mx-3">
                              <div class="my-2 text-align-center">
@@ -136,10 +137,18 @@
                                 <td th:text="${account.name}">Martins</td>
                                 <td th:text="${account.type}">Savings</td>
                                 <td > &#8358;<span  th:text="${account.amount}"></span></td>
-                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${account.id})}" ><i class="fas fa-solid fa-eye text-elephant-purple fs-2"></i></a>   <a th:href="@{/Account/edit/{id}(id=${account.id})}" >Edit <i class="fa fs-2 fa-edit text-elephant-purple"></i></a>  |
-                                    <button type="button" class="btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <i class="fas text-elephant-purple fs-2 fa-solid fa-trash-can"></i>
-                                    </button></td>
+                                <td class="text-center my-2 mx-3">
+                                    <a th:href="@{/Account/view(id=${account.id})}" ><i class="fas fa-solid fa-eye text-elephant-purple fs-2"></i></a>  |
+                                    <a th:href="@{/Account/edit/{id}(id=${account.id})}" >Edit <i class="fa fs-2 fa-edit text-elephant-purple"></i></a>   |
+                                    <button type="button" class="btn border-0 btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" value="delete">
+<!--                                        <i class="fa text-elephant-purple fs-2 fa-solid fa-trash-can"></i>-->
+                                        <i class="bi bi-trash"></i>
+
+                                    </button>
+
+                                </td>
+
+
                                 <div class="modal" id="staticBackdrop"  tabindex="-1" aria-labelledby="staticBackdropLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -148,7 +157,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="text-bold" th:text="${'Are you sure you want to delete the'+ account.name +' account?'}">Are you sure you want to delete this account?</p>
+                                                <p class="text-bold" th:text="${'Are you sure you want to delete the '+ account.name +' account?'}">Are you sure you want to delete this account?</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
