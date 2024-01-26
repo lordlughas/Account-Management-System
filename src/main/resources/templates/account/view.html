@@ -36,7 +36,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto active">ACCOUNT MANAGEMENT SYSTEM</a></li>
-                <li><a class="nav-link"><img class="rounded-5"  /> <span th:text="${account.name}"></span></a></li>
+                <li><a class="nav-link">ID:<span class="text-danger" th:text="${account.id}"></span><img class="rounded-5"  />  <span th:text="${account.name}"></span></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -44,35 +44,22 @@
 
     </div>
 </header>
-<main class="container  p-10 h-100">
-    <div class="d-flex mt-5">
-        <div class="rounded-3 col-4 h-75 shadow p-4 bg-light">
-            <img alt=""  class="w-100 h-100 image-fluid" />
-        </div>
-        <div class="rounded-3  shadow p-4 bg-light">
-
+<main class="container  p-10 h-100" style="align-items:center!important;">
+    <div class="mx-auto mt-10 w-75 h-100"  style="height:100vh;">
+        <div class="d-flex mt-5">
+            <div class="rounded-3 col-4 p-1 h-75 shadow p-4 bg-light align-items-center">
+                <img alt=""  5 class="w-100 h-100 image-fluid" />
+            </div>
+            <div class="rounded-3  shadow p-4 bg-light">
+                <h1 th:text="${account.name}" class="text-danger"></h1>
+                <h5 th:text="${account.type}"></h5>
+                <p style="font-size:4.9rem;" class="text-danger">&#8358;<span  th:text="${account.amount}"></span></p>
+            </div>
         </div>
     </div>
 
+
 </main>
-    <h1>List of All Accounts</h1>
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th><th>NAME</th><th>TYPE</th><TH>AMOUNT</TH>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td th:text="${account.id}"></td>
-                <td th:text="${account.name}"></td>
-                <td th:text="${account.type}"></td>
-                <td th:text="${account.amount}"></td>
-            </tr>
-        </tbody>
-    </table>
-
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
