@@ -1490,6 +1490,19 @@ section {
   color: #0f394c;
 }
 
+.color-elephant-yellow{
+    background-color: #EDA900!important;
+}
+.color-elephant-purple{
+    background-color:#152E4D!important;
+}
+.text-elephant-yellow{
+    color: #EDA900!important;
+}
+.text-elephant-purple{
+    color:#152E4D!important;
+}
+
 @media (max-width: 575px) {
 
   #footer .copyright,

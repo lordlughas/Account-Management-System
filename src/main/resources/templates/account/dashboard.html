@@ -10,48 +10,46 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fresh-bootstrap-table.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="/css/fresh-bootstrap-table.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </head>
-<body class="bg-light">
-<header id="header" class="bg-white">
-    <div class="container d-flex align-items-center justify-content-between">
-
-        <a th:href="@{/Account}" class="logo"><img src="/assets/img/firstBanklogo-no-bg.png" alt="" class="img-fluid"></a>
-
-        <nav id="navbar" class="navbar">
+<body class="bg-light w-100">
+<header id="header" class="w-100 bg-white py-0 d-block">
+    <div class="container d-flex align-items-center mb-5 justify-content-between">
+        <a th:href="@{/Account}" class="logo mb-0 me-10"><img src="/assets/img/firstBanklogo-no-bg.png" alt="" class="img-fluid"></a>
+        <nav id="navbar" class="navbar ms-10">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">ACCOUNT MANAGEMENT SYSTEM</a></li>
+                <li><a class="nav-link text-elephant-purple text-bold fs-3">ACCOUNT MANAGEMENT SYSTEM</a></li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
+            <i class="bi bi-list mobile-nav-toggle mb-0"></i>
         </nav>
-        <!-- .navbar -->
-
     </div>
 </header>
-    <main class="position-relative container bg-tertiary">
-        <div th:if="${message}" class="alert position-absolute top-0 alert-success alert-dismissible show" role="alert">
-            <strong th:text="${message}">Holy guacamole!</strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <div class="d-flex h-25">
-            <div class="border mx-3 border-5 col col-lg-3 shadow col-sm-12  p-3 mb-5 align-items-center bg-body-light border-success border-top-0 border-bottom-0 border-end-0 rounded">
-                <div class="d-flex align-text-bottom mx-3">
-                    <div class="col-4 mb-0 bg-opacity-3 rounded-5 bg-success align-middle">
-                        <h1 style="font-size:4.9rem;" class="mb-0 p-3 text-light text-center align-middle">S</h1>
+<div th:if="${message}" class="alert top-0 alert-success alert-dismissible show" role="alert">
+    <strong th:text="${message}"></strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    <main class="mt-5 container bg-tertiary">
+        <div class="w-100">
+             <div class="d-flex flex-wrap h-25 w-100">
+            <div class="mx-2  col col-lg-5 col-md-6 shadow col-sm-11  py-3 ps-0 pe-3 mb-5 align-items-center bg-body-white rounded" style="border-left:#152E4D solid 12px;">
+                <div class="d-flex align-text-bottom ms-0 me-5">
+                    <div class="col-3 mb-0 bg-opacity-3 rounded-5 color-elephant-yellow text-elephant-purple align-middle">
+                        <h1  class="mb-0 fs-1 p-3 text-center text-align-middle">S</h1>
                     </div>
 
-                    <div class="col-8 mx-4">
+                    <div class="col-8 mx-3">
                         <div class="my-2 text-align-center">
                             <p class="mb-0 text-secondary">Brief of Savings Account</p>
                             <div class="d-flex mb-0 text-success align-text-bottom-">
@@ -62,13 +60,13 @@
                     </div>
                 </div>
             </div>
-            <div class="border mx-3 border-5 col col-lg-3 shadow col-sm-12  p-3 mb-5 align-items-center bg-body-light border-success border-top-0 border-bottom-0 border-end-0 rounded">
-                <div class="d-flex align-text-bottom mx-3">
-                    <div class="col-4 mb-0 bg-opacity-3 rounded-5 bg-success align-middle">
-                        <h1 style="font-size:4.9rem;" class="mb-0 p-3 text-light text-center align-middle">C</h1>
+            <div class="mx-2  col col-lg-5 col-md-6 shadow col-sm-11  py-3 ps-0 pe-3 mb-5 align-items-center bg-body-white rounded" style="border-left:#152E4D solid 12px;">
+                <div class="d-flex align-text-bottom ms-0 me-5">
+                    <div class="col-3 mb-0 bg-opacity-3 rounded-5 color-elephant-yellow text-elephant-purple align-middle">
+                        <h1  class="mb-0 fs-1 p-3 text-center text-align-middle">C</h1>
                     </div>
 
-                    <div class="col-8 mx-4">
+                    <div class="col-8 mx-3">
                         <div class="my-2 text-align-center">
                             <p class="mb-0 text-secondary">Brief of Current Account</p>
                             <div class="d-flex mb-0 text-success align-text-bottom-">
@@ -79,51 +77,51 @@
                     </div>
                 </div>
             </div>
-            <div class="border mx-3 border-5 col col-lg-3 col-sm-12  shadow p-3 mb-5 align-items-center bg-body-light border-success border-top-0 border-bottom-0 border-end-0 rounded">
-                <div class="d-flex mb-o align-text-bottom mx-3">
-                    <div class="col-4 mb-0 bg-opacity-3 rounded-5 bg-success align-middle">
-                        <h1 style="font-size:4.9rem;" class="mb-0 p-3 text-light text-center align-middle">D</h1>
-                    </div>
+                 <div class="mx-2  col col-lg-5 col-md-6 shadow col-sm-11  py-3 ps-0 pe-3 mb-5 align-items-center bg-body-white rounded" style="border-left:#152E4D solid 12px;">
+                     <div class="d-flex align-text-bottom ms-0 me-5">
+                         <div class="col-3 mb-0 bg-opacity-3 rounded-5 color-elephant-yellow text-elephant-purple align-middle">
+                             <h1  class="mb-0 fs-1 p-3 text-center text-align-middle">D</h1>
+                         </div>
 
-                    <div class="col-8 mx-4">
-                        <div class="my-2 text-align-center">
-                            <p class="mb-0 text-secondary">Brief of Domiciliary Account</p>
-                            <div class="d-flex mb-0 text-success align-text-bottom-">
-                                <h4 class="my-1 text-danger" style="font-size:3.5rem!important;">&#8358;<span th:text="${totalDomis}"></span></h4>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-0  align-text-bottom"><p class="mb-0 font-13"><span th:text="${countedDomi}"></span> Account Active</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="border mx-3 border-5 col col-lg-3 col-sm-12  shadow p-3 mb-5 align-items-center bg-body-light border-success border-top-0 border-bottom-0 border-end-0 rounded">
-                <div class="d-flex mb-o align-text-bottom mx-3">
-                    <div class="col-4 mb-0 bg-opacity-3 rounded-5 bg-success align-middle">
-                        <h1 style="font-size:4.9rem;" class="mb-0 p-3 text-light text-center align-middle">S</h1>
-                    </div>
+                         <div class="col-8 mx-3">
+                             <div class="my-2 text-align-center">
+                                 <p class="mb-0 text-secondary">Brief of Domicilliary Account</p>
+                                 <div class="d-flex mb-0 text-success align-text-bottom-">
+                                     <h4 class="my-1 text-danger" style="font-size:3.5rem!important;">&#8358;<span th:text="${totalDomis}"></span></h4>
+                                 </div>
+                             </div>
+                             <div class="d-flex mb-0  align-text-bottom"><p class="mb-0 font-13"><span th:text="${countedDomi}"></span> Account Active</p></div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="mx-1 col col-lg-5 col-md-6 shadow col-sm-11  py-3 ps-0 pe-3 mb-5 align-items-center bg-body-white rounded" style="border-left:#152E4D solid 12px;">
+                     <div class="d-flex align-text-bottom ms-0 me-5">
+                         <div class="col-3 mb-0 bg-opacity-3 rounded-5 color-elephant-yellow text-elephant-purple align-middle">
+                             <h1  class="mb-0 fs-1 p-3 text-center text-align-middle">S</h1>
+                         </div>
 
-                    <div class="col-8 mx-4">
-                        <div class="my-2 text-align-center">
-                            <p class="mb-0 text-secondary">Brief of Salary Account</p>
-                            <div class="d-flex mb-0 text-success align-text-bottom-">
-                                <h4 class="my-1 text-danger" style="font-size:3.5rem!important;">&#8358;<span th:text="${totalSalary}"></span></h4>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-0  align-text-bottom"><p class="mb-0 font-13"><span th:text="${countedSalary}"></span> Account Active</p></div>
-                    </div>
-                </div>
-            </div>
+                         <div class="col-8 mx-3">
+                             <div class="my-2 text-align-center">
+                                 <p class="mb-0 text-secondary">Brief of Salary Account</p>
+                                 <div class="d-flex mb-0 text-success align-text-bottom-">
+                                     <h4 class="my-1 text-danger" style="font-size:3.5rem!important;">&#8358;<span th:text="${totalSalary}"></span></h4>
+                                 </div>
+                             </div>
+                             <div class="d-flex mb-0  align-text-bottom"><p class="mb-0 font-13"><span th:text="${countedSalary}"></span> Account Active</p></div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </div>
         <div class="w-100">
             <div class="d-flex">
                 <div class="col-9">
-                    <div class="fresh-table full-color-orange shadow p-3 mb-5 bg-body-tertiary rounded">
-
+                    <div class="fresh-table full-color-orange shadow p-3 mb-5 bg-body-tertiary rounded" >
                         <div class="toolbar">
                             <a th:href="@{/Account/create}" class="btn btn-default">Create New Account</a>
                         </div>
+                        <table id="fresh-table" class="table fs-2">
 
-                        <table id="fresh-table" class="table">
                             <thead>
                             <th data-field="id">ID</th>
                             <th data-field="name">Name</th>
@@ -133,14 +131,14 @@
 
                             </thead>
                             <tbody>
-                            <tr th:each="account:${accounts}">
+                            <tr class="fs-3" th:each="account:${accounts}">
                                 <td th:text="${account.id}">1</td>
                                 <td th:text="${account.name}">Martins</td>
                                 <td th:text="${account.type}">Savings</td>
                                 <td > &#8358;<span  th:text="${account.amount}"></span></td>
-                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${account.id})}" >View</a>  | <a th:href="@{/Account/edit/{id}(id=${account.id})}" >Edit <i class="fa fa-edit"></i></a>  |
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        Delete <i class="fa fa-remove"></i>
+                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${account.id})}" ><i class="fas fa-solid fa-eye text-elephant-purple fs-2"></i></a>   <a th:href="@{/Account/edit/{id}(id=${account.id})}" >Edit <i class="fa fs-2 fa-edit text-elephant-purple"></i></a>  |
+                                    <button type="button" class="btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <i class="fas text-elephant-purple fs-2 fa-solid fa-trash-can"></i>
                                     </button></td>
                                 <div class="modal" id="staticBackdrop"  tabindex="-1" aria-labelledby="staticBackdropLabel">
                                     <div class="modal-dialog">

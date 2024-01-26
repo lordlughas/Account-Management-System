@@ -27,9 +27,7 @@
 
 </head>
 
-<body>
-
-<!-- ======= Header ======= -->
+<body class="h-100 w-100">
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
@@ -37,7 +35,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">ACCOUNT MANAGEMENT SYSTEM</a></li>
+                <li><a class="nav-link text-elephant-purple" href="#hero">ACCOUNT MANAGEMENT SYSTEM</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -53,53 +51,36 @@
         <div class="row">
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <div class="shadow p-3 mb-5">
-                    <h1 class="mb-3">CREATE ACCOUNT</h1>
 
-                    <h2 class="bg-primary" th:text="${message}">  </h2>
-                    <form th:action="@{/Account/update/{id}(id = ${account.id})}" method="POST">
-                        <label>Name</label>
-                        <input type="text" name="name" th:value="${account.name}" id="name" value="">
-                        <span id="nameError" style="color: red;"></span>
-                        <br><br>
 
-                        <label>Account Type</label>
-                        <select name="type" id="type">
-                            <option value="" th:value="${account.type}" th:text="${account.type}" selected disabled>Select Type</option>
+                    <h2 class="my-2  text-success" th:text="${message}">  </h2>
+                    <form class="form px-5" th:action="@{/Account/update/{id}(id = ${account.id})}" method="POST">
+                        <h1 class="mb-3">EDIT ACCOUNT</h1>
+                        <label class="fs-5 mt-3 text-elephant-purple">Name</label>
+                        <input class="d-block w-100 py-2 border-5" type="text" name="name" id="name" th:value="${account.name}">
+                        <span class="d-block w-100 mb-2" id="nameError" style="color: red;"></span>
+
+                        <label class="fs-5 mt-2 text-elephant-purple">Account Type</label>
+                        <select class="d-block w-100 py-2 border-5"  name="type" id="type">
+                            <option value=""  th:value="${account.type}" th:text="${account.type}"selected disabled>Select Type</option>
                             <option value="Savings">Savings</option>
                             <option value="Current">Current</option>
                             <option value="Domiciliary">Domiciliary</option>
                             <option value="Salary">Salary</option>
                         </select>
                         <span id="typeError" style="color: red;"></span>
-                        <br><br>
 
-                        <label>Amount:</label>
-                        <input type="number" name="amount" id="amount" value="" th:value="${account.amount}" min="1500">
+                        <label class="fs-5 mt-2 text-elephant-purple mt-2">Amount:</label>
+                        <input class="d-block w-100 py-2 border-5" type="number" name="amount" id="amount" th:value="${account.amount}" min="1500">
                         <span id="amountError" style="color: red;"></span>
-                        <br><br>
 
-                        <input type="submit" value="Create Account" id="submitBtn" disabled>
+                        <input class="btn-get-started border-none shadow px-5 mt-4 mb-4 text-bold text-elephant-purple text-center color-elephant-yellow" type="submit" value="Save Changes" id="submitBtn" disabled>
                     </form>
                 </div>
-
-
-                <div><a  th:href="@{/Account/dashboard}" class="btn-get-started">Go to Dashboard</a></div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img">
                 <img src="/assets/img/hero-img.png" class="img-fluid" alt="">
-<!--                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">-->
-<!--                    <div class="carousel-inner">-->
-<!--                        <div class="carousel-item active">-->
-<!--                            <img class="d-block w-100" src="https://pngtree.com/freepng/pink-gold-saving-money-pig-gold-coins-fly_3821142.html" alt="First slide">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item">-->
-<!--                            <img class="d-block w-100" src="https://pngtree.com/freepng/pink-gold-saving-money-pig-gold-coins-fly_3821142.html" alt="Second slide">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item">-->
-<!--                            <img class="d-block w-100" src="https://pngtree.com/freepng/pink-gold-saving-money-pig-gold-coins-fly_3821142.html" alt="Third slide">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div><a  th:href="@{/Account/dashboard}" class="btn-get-started color-elephant-purple text-center fs-2 text-bold mt-3">Back to Dashboard  >></a></div>
             </div>
         </div>
     </div>
@@ -110,6 +91,10 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
+
+        </div>
+        </div>
+        </div>
 
         <div class="container py-4">
             <div class="copyright">
