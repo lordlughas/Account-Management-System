@@ -1598,3 +1598,8 @@ input[type=file] > input[type=button]::-moz-focus-inner {
 }
 
 /*# sourceMappingURL=fresh-bootstrap-table.css.map */
+
+.bootstrap-table{
+    background:white!important;
+    overflow:scroll;
+}
