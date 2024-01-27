@@ -34,6 +34,7 @@ Make sure you have the following installed on your machine before setting up the
     <img src="/src/main/resources/static/assets/img/index_page.png" alt="index" style="width: 400px; height: 300px; margin-right: 10px;">
     <img src="/src/main/resources/static/assets/img/create_account.png" alt="create_page" style="width: 400px; height: 300px; margin-right: 10px;">
     <img src="/src/main/resources/static/assets/img/dashboard.png" alt="dashboard" style="width: 400px; height: 300px; margin-right: 10px;">  
+    <img src="/src/main/resources/static/assets/img/team.png" alt="team" style="width: 400px; height: 300px; margin-right: 10px;">  
 </div>
 
 ## Installation
