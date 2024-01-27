@@ -53,8 +53,9 @@
                 <div class="shadow p-3 mb-5">
 
 
-                    <h2 class="my-2  text-success" th:text="${message}">  </h2>
+
                     <form class="form px-5" th:action="@{/Account/regaccount}" method="POST">
+                        <h2 class="my-2  text-success" th:text="${message}">  </h2>
                         <h1 class="mb-3">CREATE ACCOUNT</h1>
                         <label class="fs-5 mt-3 text-elephant-purple">Name</label>
                         <input class="d-block w-100 py-2 border-5" type="text" name="name" id="name" value="">

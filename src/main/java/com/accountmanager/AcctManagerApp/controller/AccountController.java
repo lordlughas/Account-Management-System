@@ -97,7 +97,6 @@ public class AccountController {
         ModelAndView viewModelAndView = new ModelAndView();
         viewModelAndView.setViewName("account/view");
         Account selectedAccount = accountService.getAccount(id);
-        viewModelAndView.addObject("accountPic", "https://robohash.org/"+ selectedAccount.getName());
         viewModelAndView.addObject("account", selectedAccount);
         return viewModelAndView;
     }
@@ -110,6 +109,26 @@ public class AccountController {
         List<Account> accountList = accountService.getAllAccount();
         dashboardView.addObject("accounts", accountList);
         dashboardView.addObject("message", "Successfully Deleted!!!");
+        double totalAmount = 0.0;
+        for (Account accountfils: accountList) {
+            totalAmount += account.getAmount();
+        }
+
+        long countedSavings = accountList.stream().filter(accountfils -> "Savings".equalsIgnoreCase(account.getType())).count();
+        long countedDomi = accountList.stream().filter(accountfils -> "Domiciliary".equalsIgnoreCase(account.getType())).count();
+        long countedSalary = accountList.stream().filter(accountfils -> "Salary".equalsIgnoreCase(account.getType())).count();
+        long countedCurrent = accountList.stream().filter(accountfils -> "Current".equalsIgnoreCase(account.getType())).count();
+        dashboardView.addObject("totalAmount", totalAmount);
+        dashboardView.addObject("countedSavings", countedSavings);
+        dashboardView.addObject("countedDomi",countedDomi);
+        dashboardView.addObject("countedSalary",countedSalary);
+        dashboardView.addObject("countedCurrent",countedCurrent);
+        dashboardView.addObject("totalSavings",accountList.stream().filter(accountfils -> "Savings".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("totalDomis",accountList.stream().filter(accountfils -> "Domiciliary".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("totalSalary",accountList.stream().filter(accountfils -> "Salary".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("totalCurrent",accountList.stream().filter(accountfils -> "Current".equalsIgnoreCase(account.getType())).mapToDouble(Account::getAmount).sum());
+        dashboardView.addObject("topAccounts",accountList.stream().sorted(Comparator.comparingDouble(Account::getAmount).reversed()).limit(3).collect(Collectors.toList()));
+        dashboardView.addObject("accounts", accountList);
         dashboardView.setViewName("account/dashboard");
         return dashboardView;
     };

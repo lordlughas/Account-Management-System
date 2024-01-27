@@ -116,7 +116,7 @@
         <div class="w-100">
             <div class="d-flex">
                 <div class="col-9">
-                    <div class="fresh-table full-color-orange shadow p-3 mb-5 bg-body-tertiary rounded" >
+                    <div class="fresh-table full-color-orange shadow p-3 mb-5 color-elephat-purple rounded" >
                         <div class="toolbar">
                             <a th:href="@{/Account/create}" class="btn btn-default">Create New Account</a>
                         </div>
@@ -136,23 +136,23 @@
                                 <td th:text="${account.name}">Martins</td>
                                 <td th:text="${account.type}">Savings</td>
                                 <td > &#8358;<span  th:text="${account.amount}"></span></td>
-                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${account.id})}" ><i class="fas fa-solid fa-eye text-elephant-purple fs-2"></i></a>   <a th:href="@{/Account/edit/{id}(id=${account.id})}" >Edit <i class="fa fs-2 fa-edit text-elephant-purple"></i></a>  |
+                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${account.id})}" ><i class="fas fa-solid fa-eye me-4 text-elephant-purple fs-2"></i></a>   <a th:href="@{/Account/edit/{id}(id=${account.id})}" > <i class="fa fs-2 fa-edit me-4 text-elephant-purple"></i></a>
                                     <button type="button" class="btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <i class="fas text-elephant-purple fs-2 fa-solid fa-trash-can"></i>
+                                        <i class="fas fa-solid fa-trash-can text-elephant-purple fs-2 "></i>
                                     </button></td>
                                 <div class="modal" id="staticBackdrop"  tabindex="-1" aria-labelledby="staticBackdropLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="staticBackdropLabel">Delete Account</h5>
+                                                <h5 class="modal-title fs-1" id="staticBackdropLabel">Delete Account</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="text-bold" th:text="${'Are you sure you want to delete the'+ account.name +' account?'}">Are you sure you want to delete this account?</p>
+                                                <p class="text-bold fs-3" th:text="${'Are you sure you want to delete the'+ account.name +' account?'}">Are you sure you want to delete this account?</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                                <a  class="btn btn-secondary" th:href="@{/Account/delete/{id}(id=${account.id})}">Yes</a>
+                                                <button type="button" class="btn btn-primary px-4 py-3" data-bs-dismiss="modal">No</button>
+                                                <a  class="btn btn-danger px-4 py-3" th:href="@{/Account/delete/{id}(id=${account.id})}">Yes</a>
                                             </div>
                                         </div>
                                     </div>
@@ -167,9 +167,9 @@
                     <div class="mx-3 shadow p-3 mb-5 bg-body-light rounded">
                         <canvas id="myPieChart"></canvas>
                     </div>
-                    <div class="mx-3 shadow p-3 mb-5 bg-body-light rounded">
+                    <div class="mx-3 shadow w-100 p-3 mb-5 bg-body-light rounded">
                         <h4 class="text-center text-success my-3">Top Viable Customers</h4>
-                        <table  class="table table-striped">
+                        <table  class="table table-striped fs-3">
                             <thead>
                             <th>ID</th>
                             <th>Name</th>
@@ -181,34 +181,16 @@
                                 <td th:text="${topaccount.id}">1</td>
                                 <td th:text="${topaccount.name}">Martins</td>
                                 <td th:text="${topaccount.type}">Savings</td>
-                                <td>  &#8358;<span  th:text="${topaccount.amount}"></span></td>
-                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${topaccount.id})}" >View </a> </td>
+                                <td>  &#8358;<span  th:text="${topaccount.amount}"><i class="fas fa-solid fa-eye me-4 text-elephant-purple fs-2"></i></span></td>
+                                <td class="text-center my-2 mx-3"><a th:href="@{/Account/view(id=${topaccount.id})}" > </a> </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="mx-3 shadow p-3 mb-5 bg-body-light rounded">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="d-block w-100 text-light  bg-primary">
-                                        <h4>Total Amount of All Accounts</h4>
-                                        <h1><strong class="text-dark" th:text="${totalAmount}"></strong></h1>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="d-block w-100 text-light  bg-primary">
-                                        <h4>Total Amount of All Accounts</h4>
-                                        <h1><strong class="text-dark" th:text="${totalAmount}"></strong></h1>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="d-block w-100 text-light  bg-primary">
-                                        <h4>Reach out to more clients today...</h4>
-                                        <h1><strong class="text-dark" th:text="${totalAmount}">Get Global</strong></h1>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="mx-3 shadow w-100 p-3 mb-5 bg-body-light rounded">
+                        <div class="d-block w-100 text-light  py-6">
+                            <h4>Total Amount of All Accounts</h4>
+                            <h1><strong class="text-dark fs-1" th:text="${totalAmount}"></strong></h1>
                         </div>
                     </div>
                 </div>
