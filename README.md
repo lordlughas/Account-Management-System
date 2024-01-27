@@ -1,24 +1,19 @@
 # ACCOUNT MANAGEMENT SYSTEM
 ## Developed by Group Five(5) for First Academy 2.0 Software Engineering Track - SringBoot End Of Course Project
 
-![imgs](link)
-![imgs](link)
-
 ## Table of Contents
-* Project Essence
+* [Project Essence](#project-essence)
 * [Description](#description)
-* [Dashboard Screenshot](imglink)
-* [Create Account](imglink)
-* [View Account](imglink)
+* [Dashboard Screenshot](screenshots)
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
 * [Setup Instruction](#setup-instruction)
-* [How to run the application](#how-to-run-the-application)
 * [Usage](#usage)
-* [Collaborators](#collaborators)
 * [Features](#features)
-* [Licenses](#licenses)
-* [Acknowledgment](#acknowledgment)
+* [Collaborators](#collaborators)
+* [Contributing](#contributing)
+* [Licenses](#license)
+* [Acknowledgment](#acknowledgments)
 * [Resources](#resources)
 
 ## Project Essence
@@ -34,6 +29,13 @@ Make sure you have the following installed on your machine before setting up the
 * Apache Maven
 * MySQL Database Server
 
+## Screenshots
+<div style="display: flex; justify-content: center;">
+    <img src="/src/main/resources/static/assets/img/index_page.png" alt="index" style="width: 400px; height: 300px; margin-right: 10px;">
+    <img src="/src/main/resources/static/assets/img/create_account.png" alt="create_page" style="width: 400px; height: 300px; margin-right: 10px;">
+    <img src="/src/main/resources/static/assets/img/dashboard.png" alt="dashboard" style="width: 400px; height: 300px; margin-right: 10px;">  
+</div>
+
 ## Installation
 #### Setup Instruction
 Follow these steps to set up and run the Account Management System:
@@ -41,7 +43,7 @@ Follow these steps to set up and run the Account Management System:
 #### 1. Clone the Repository
 Clone the repository to your local machine using the following command:
 ```
-git clone https://github.com/your-username/account-management-system.git
+git clone https://github.com/lordlughas/account-management-system.git
 ```
 #### 2. Configure MySQL Database
 Create a MySQL database and update the application.properties file with your database configuration. Open the src/main/resources/application.properties file and modify the following properties:
@@ -74,7 +76,7 @@ Open your web browser and go to http://localhost:8080 to access the Account Mana
 ## Usage
 - Create an account: Create a new account by providing the required information like your name, and account type(savings, checking, domiciliary, current etc).
 - Profile Management: You can edit your account, and delete your account.
-- View Dashboard: You can view the dashboard of accounts available.
+- View Dashboard: You can view the dashboard of accounts available. See the top accounts, while also having a chat to show the type of accounts available.
 
   
 ## Features
@@ -82,7 +84,7 @@ Open your web browser and go to http://localhost:8080 to access the Account Mana
 - Authentication and Validation of Account: Authenticate the creation of an account if it exists or is being created below a specific amount.
 
 
-## Contributors
+## Collaborators
 1. Charles .I. Lughas
 - GitHub: [lordlughas](https://github.com/lordlughas)
 - Email: charleslughas@gmail.com
@@ -104,17 +106,17 @@ Open your web browser and go to http://localhost:8080 to access the Account Mana
 - Email: fsamson5@gmail.com
 
 6. Idowu .J. Adeyink
-- GitHub: [nasir](https://github.com/idowu007)
+- GitHub: [Idowu](https://github.com/idowu007)
 - Email: adeyinkaidowu007@gmail.com
 
 #### Contributing
-If you'd like to contribute to the project, please follow our [contribution guidelines](https://github.com/lordlughas/).
+If you'd like to contribute to the project, please follow our [contribution guidelines](https://github.com/lordlughas).
 
 ## License
 This project is licensed under the MIT License
 
 ## Acknowledgments
-We sincerely appreciate our facilitator, Mr Azeez, for his tutelage and experience in guiding us through this springboot course. With him, learning this springboot course was worth every moment. In addition, we thank the entire [Elev8](https://elev8.com) for giving us this platform under FirstAcademy.
+We sincerely appreciate our facilitator, Mr Azeez Saliu, for his tutelage and experience in guiding us through this springboot course. With him, learning this springboot course was worth every moment. In addition, we thank the entire [Elev8](https://elev8.com) for giving us this platform under FirstAcademy.
 
 ## Resources
 - [springboot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
