@@ -27,3 +27,12 @@ right:0;
     padding:5px 10px;
     margin-left:20px;
 }
+
+..fixed-table-toolbar .search{
+    border:2px solid #152E4D!important;
+}
+::placeholder{
+    font-weight:bold;
+    font-style:italics;
+    font-size:2rem;
+}

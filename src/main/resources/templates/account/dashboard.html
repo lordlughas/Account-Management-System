@@ -116,8 +116,8 @@
             <div class="d-flex">
                 <div class="col-lg-9">
                     <div class="fresh-table bg-white shadow p-3 mb-5 rounded" >
-                        <div class="toolbar fs-2">
-                            <a th:href="@{/Account/create}" class="btn d-inline fs-2 ms-2 me-5 rounded-0 border-0 color-elephant-purple text-light">Create New Account</a>
+                        <div class="toolbar fs-3">
+                            <a th:href="@{/Account/create}" class="btn d-inline fs-3 ms-2 me-5 rounded-0 border-0 color-elephant-purple text-light">Create New Account</a>
                         </div>
                         <table id="fresh-table" class="table fs-2">
 
@@ -189,7 +189,7 @@
                     <div class="mx-3 shadow w-100 p-3 mb-5 bg-body-white rounded">
                         <div class="d-block w-100 text-light  py-6">
                             <h4 class="text-elephant-yellow">Total Amount of All Accounts</h4>
-                            <h1><strong class="text-dark fs-1" th:text="${totalAmount}"></strong></h1>
+                            <h1 class="text-dark fs-1">&#8358;<strong  th:text="${totalAmount}"></strong></h1>
                         </div>
                     </div>
                 </div>
