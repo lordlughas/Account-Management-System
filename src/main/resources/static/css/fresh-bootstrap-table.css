@@ -1374,13 +1374,14 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   color: #FFFFFF;
 }
 .fresh-table[class*=full-color-] .btn {
-  border-color: rgba(255, 255, 255, 0.8);
-  color: rgba(255, 255, 255, 0.8);
+   background-color: transparent;
+    color: #152E4D!important;
+    border: none;
 }
 .fresh-table[class*=full-color-] .btn:hover, .fresh-table[class*=full-color-] .btn:focus, .fresh-table[class*=full-color-] .btn:active, .fresh-table[class*=full-color-] .btn.active, .open > .fresh-table[class*=full-color-] .btn.dropdown-toggle {
   background-color: transparent;
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+  color: #EDA900!important;
+  border: none;
 }
 .fresh-table[class*=full-color-] .btn.disabled, .fresh-table[class*=full-color-] .btn.disabled:hover, .fresh-table[class*=full-color-] .btn.disabled:focus, .fresh-table[class*=full-color-] .btn.disabled.focus, .fresh-table[class*=full-color-] .btn.disabled:active, .fresh-table[class*=full-color-] .btn.disabled.active, .fresh-table[class*=full-color-] .btn:disabled, .fresh-table[class*=full-color-] .btn:disabled:hover, .fresh-table[class*=full-color-] .btn:disabled:focus, .fresh-table[class*=full-color-] .btn:disabled.focus, .fresh-table[class*=full-color-] .btn:disabled:active, .fresh-table[class*=full-color-] .btn:disabled.active, .fresh-table[class*=full-color-] .btn[disabled], .fresh-table[class*=full-color-] .btn[disabled]:hover, .fresh-table[class*=full-color-] .btn[disabled]:focus, .fresh-table[class*=full-color-] .btn[disabled].focus, .fresh-table[class*=full-color-] .btn[disabled]:active, .fresh-table[class*=full-color-] .btn[disabled].active, fieldset[disabled] .fresh-table[class*=full-color-] .btn, fieldset[disabled] .fresh-table[class*=full-color-] .btn:hover, fieldset[disabled] .fresh-table[class*=full-color-] .btn:focus, fieldset[disabled] .fresh-table[class*=full-color-] .btn.focus, fieldset[disabled] .fresh-table[class*=full-color-] .btn:active, fieldset[disabled] .fresh-table[class*=full-color-] .btn.active {
   background-color: transparent;
@@ -1526,23 +1527,11 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   background-size: 250% 250%;
 }
 .fresh-table.full-color-orange {
-  background: #ffb33b;
-  background: -moz-radial-gradient(center, ellipse cover, #ff5221 0%, #ffb33b 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #ff5221), color-stop(100%, #ffb33b));
-  /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, #ff5221 0%, #ffb33b 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, #ff5221 0%, #ffb33b 100%);
-  /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, #ff5221 0%, #ffb33b 100%);
-  /* IE10+ */
-  background: radial-gradient(ellipse at center, #ff5221 0%, #ffb33b 100%);
-  /* W3C */
+  background: #ffffff;
   background-size: 250% 250%;
 }
 .fresh-table.full-color-red {
-  background: #ED362C;
+  background: #ffffff;
   background: -moz-radial-gradient(center, ellipse cover, #C51E1B 0%, #ED362C 100%);
   /* FF3.6+ */
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #C51E1B), color-stop(100%, #ED362C));
