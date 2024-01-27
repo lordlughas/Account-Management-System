@@ -1387,22 +1387,8 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.8);
 }
-.fresh-table[class*=full-color-] .btn.btn-fill {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.8);
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-.fresh-table[class*=full-color-] .btn.btn-fill:hover, .fresh-table[class*=full-color-] .btn.btn-fill:focus, .fresh-table[class*=full-color-] .btn.btn-fill:active, .fresh-table[class*=full-color-] .btn.btn-fill.active, .open > .fresh-table[class*=full-color-] .btn.btn-fill.dropdown-toggle {
-  background-color: #FFFFFF;
-  color: #FFFFFF;
-}
-.fresh-table[class*=full-color-] .btn.btn-fill .caret {
-  border-top-color: #FFFFFF;
-}
-.fresh-table[class*=full-color-] .btn .caret {
-  border-top-color: rgba(255, 255, 255, 0.8);
-}
+
+
 .fresh-table[class*=full-color-] .fixed-table-toolbar {
   background: none !important;
   border-color: rgba(255, 255, 255, 0.15);
